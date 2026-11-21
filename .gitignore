@@ -1,0 +1,20 @@
+# Local NASA/PDS downloads and generated artifacts stay out of version control.
+dataset/*
+!dataset/.gitkeep
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Python and MATLAB generated files.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.asv
+
+# Build and editor files.
+build/
+dist/
+.DS_Store
+Thumbs.db

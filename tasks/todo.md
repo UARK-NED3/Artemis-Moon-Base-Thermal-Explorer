@@ -1,0 +1,16 @@
+- [x] Define the thermal-core test contract.
+  - Acceptance: tests express validation, heat-rate, equilibrium, and transient behavior.
+  - Verify: tests fail before the source module exists.
+  - Files: `tests/test_core.py`
+- [x] Implement the Python thermal core.
+  - Acceptance: all core tests pass with SI-unit inputs and no external dependencies.
+  - Verify: `python -m unittest discover -s tests -v`.
+  - Files: `src/python/lunar_thermal/*.py`
+- [x] Add a JSON scenario runner and synthetic lunar-night input.
+  - Acceptance: one scenario executes deterministically and writes no source data.
+  - Verify: runner command in `SPEC.md`.
+  - Files: `scripts/`, `config/scenarios/`
+- [x] Add the MATLAB parity scaffold and teaching/source documentation.
+  - Acceptance: functions consume the shared JSON scenario schema and describe limitations.
+  - Verify: manual MATLAB command when MATLAB is available.
+  - Files: `src/matlab/`, `docs/`, `README.md`
