@@ -18,3 +18,7 @@
   - Acceptance: terminal and MATLAB learners choose a controlled case and compare a committed prediction with a modeled temperature trend.
   - Verify: unit tests for classification plus a scripted terminal interaction.
   - Files: `src/python/lunar_thermal/explorer.py`, `scripts/explore.py`, `src/matlab/exploreLunarThermal.m`, `config/scenarios/`
+- [x] Add synthetic graphical outputs and first GUI implementations.
+  - Acceptance: Python and MATLAB expose interactive controls and plot temperature histories plus final heat-rate terms.
+  - Verify: Python history unit test; Streamlit startup smoke test; MATLAB GUI creation smoke test.
+  - Files: `apps/`, `src/matlab/LunarThermalExplorer.m`, `requirements.txt`

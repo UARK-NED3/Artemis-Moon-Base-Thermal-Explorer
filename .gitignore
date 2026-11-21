@@ -16,5 +16,6 @@ __pycache__/
 # Build and editor files.
 build/
 dist/
+tmp/
 .DS_Store
 Thumbs.db

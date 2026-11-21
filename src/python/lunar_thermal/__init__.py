@@ -7,6 +7,7 @@ from .core import (
     advance_constant_forcing,
     equilibrium_temperature_k,
     heat_rates,
+    simulate_constant_forcing_history,
 )
 
 __all__ = [
@@ -16,4 +17,5 @@ __all__ = [
     "advance_constant_forcing",
     "equilibrium_temperature_k",
     "heat_rates",
+    "simulate_constant_forcing_history",
 ]

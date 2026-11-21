@@ -26,6 +26,8 @@ C_{\mathrm{th}}\frac{dT}{dt}=Q_{\mathrm{internal}}+\alpha_{\mathrm{s}}A_{\mathrm
 $env:PYTHONPATH = 'src\\python'
 python -m unittest discover -s tests -v
 python scripts/run_scenario.py config/scenarios/lunar_night_survival.json
+pip install -r requirements.txt
+streamlit run apps/python_thermal_explorer.py
 ```
 
 MATLAB (after implementation):
@@ -33,6 +35,7 @@ MATLAB (after implementation):
 ```matlab
 addpath('src/matlab')
 result = runLunarThermalScenario('config/scenarios/lunar_night_survival.json');
+LunarThermalExplorer
 ```
 
 ## Project structure
@@ -43,6 +46,7 @@ src/matlab/                 MATLAB-equivalent core
 tests/                      Python unit and scenario tests
 config/scenarios/           Language-neutral synthetic inputs
 scripts/                    Explicit command-line entry points
+apps/                       Browser-based Streamlit interface
 docs/                       Instructor, source, and model-boundary material
 dataset/                    User-downloaded source files; ignored by git
 data/raw/, data/processed/  Future datasets; ignored by git
@@ -58,7 +62,8 @@ data/raw/, data/processed/  Future datasets; ignored by git
 
 - Python standard-library `unittest` tests drive behavior before implementation.
 - Tests cover unit/range validation, dimensionally consistent heat-rate composition, radiative-equilibrium limits, energy accounting, and monotonic response to internal load and radiator area.
-- MATLAB parity is checked against shared reference scenarios once the MATLAB solver is introduced.
+- MATLAB and Python use the same declared heat-balance terms and shared JSON scenario inputs; formal cross-language regression tolerances remain a future release item.
+- GUI verification includes a local Streamlit startup check and MATLAB UI creation/export check. UI graphics are simulations, not measured mission data.
 
 ## Boundaries
 
@@ -72,3 +77,4 @@ data/raw/, data/processed/  Future datasets; ignored by git
 2. The Python core passes its validation and physics-limit tests.
 3. A synthetic lunar-night scenario runs from JSON and produces deterministic temperature/heat-rate output.
 4. Documentation names NASA source materials and model exclusions without implying empirical validation.
+5. Python and MATLAB interfaces graph the transient temperature history and final heat-rate terms for declared synthetic inputs.
