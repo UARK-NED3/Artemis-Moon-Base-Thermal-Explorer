@@ -14,3 +14,7 @@
   - Acceptance: functions consume the shared JSON scenario schema and describe limitations.
   - Verify: manual MATLAB command when MATLAB is available.
   - Files: `src/matlab/`, `docs/`, `README.md`
+- [x] Add the first prediction-test-explain interaction.
+  - Acceptance: terminal and MATLAB learners choose a controlled case and compare a committed prediction with a modeled temperature trend.
+  - Verify: unit tests for classification plus a scripted terminal interaction.
+  - Files: `src/python/lunar_thermal/explorer.py`, `scripts/explore.py`, `src/matlab/exploreLunarThermal.m`, `config/scenarios/`

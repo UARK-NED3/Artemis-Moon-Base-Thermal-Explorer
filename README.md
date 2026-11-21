@@ -15,9 +15,11 @@ cd D:\aerospace-repo
 $env:PYTHONPATH = 'src\python'
 python -m unittest discover -s tests -v
 python scripts/run_scenario.py config/scenarios/lunar_night_survival.json
+python scripts/explore.py
 ```
 
 The command runs a declared synthetic lunar-night case and prints simulated SI-unit temperatures, energy accounting, and final heat rates as JSON.
+`explore.py` adds a terminal prediction gate: choose a controlled scenario, commit a rise/fall/stay prediction, then inspect the model comparison.
 
 ## Quick start: MATLAB
 
@@ -25,6 +27,7 @@ The command runs a declared synthetic lunar-night case and prints simulated SI-u
 cd('D:\aerospace-repo')
 addpath('src/matlab')
 result = runLunarThermalScenario('config/scenarios/lunar_night_survival.json');
+exploreLunarThermal
 ```
 
 ## Learning loop
